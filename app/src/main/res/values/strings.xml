@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Boggle</string>
+    <string name="hint">Enter a word then hit submit.</string>
+    <string name="clear">Clear</string>
+    <string name="submit">Submit</string>
+    <string name="score">Score</string>
+    <string name="score_num">0</string>
+    <string name="new_game">New Game</string>
+</resources>
