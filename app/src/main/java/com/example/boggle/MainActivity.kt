@@ -1,21 +1,31 @@
 package com.example.boggle
 
-import GameStatusFragment
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.replace
 
 class MainActivity : AppCompatActivity() {
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, GameFragment())
+            //.replace(R.id.fragment_container_status, GameStatusFragment())
             .commit()
 
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container_2, GameStatusFragment())
-            .commit()
+        val btnReset : android.widget.Button = findViewById(R.id.btnNewGame)
+        btnReset.setOnClickListener {
+            val gameFragment = supportFragmentManager.findFragmentById(R.id.fragment_container) as? GameFragment
+            gameFragment?.resetGame()
+        }
+
     }
-}
+
+
+
+
+
+    }
