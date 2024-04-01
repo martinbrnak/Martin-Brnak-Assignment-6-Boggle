@@ -14,7 +14,7 @@ import android.widget.GridView
 import androidx.fragment.app.Fragment
 import kotlin.collections.shuffle
 
-class GameFragment : Fragment() {
+public class GameFragment : Fragment() {
     private lateinit var gridView: GridView
 
     // Define your 4x4 board of letters here

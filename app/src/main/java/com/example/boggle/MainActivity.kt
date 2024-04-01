@@ -1,7 +1,9 @@
 package com.example.boggle
 
+import GameStatusFragment
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.replace
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -10,6 +12,10 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, GameFragment())
+            .commit()
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container_2, GameStatusFragment())
             .commit()
     }
 }
